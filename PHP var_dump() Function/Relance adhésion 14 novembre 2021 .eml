@@ -1,0 +1,527 @@
+Delivered-To: theory51@gmail.com
+Received: by 2002:a92:d6c1:0:0:0:0:0 with SMTP id z1csp3650992ilp;
+        Sat, 13 Nov 2021 15:00:15 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJyqudyd38i/tQ2JwzSPqMZcDOaIFwQRNZI6Y6WZ2fMSLf1Fc93kRhTIXBAftpVQ548gC4Vi
+X-Received: by 2002:a05:600c:2189:: with SMTP id e9mr46393039wme.35.1636844415544;
+        Sat, 13 Nov 2021 15:00:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1636844415; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VaxUQ26DJqOBk7NmBNCfg1yU8v3opa6dDkh+pY71hPai+YcRc6UqS3BoSBdIk+y/M7
+         KGb+1R/iqwkcH7PCRUoxx6w6Iv7fJLtZTmB+htH89uW7fTnyjghctV2eYZS1ZLq/Jwsn
+         uwQoQDBwu7PoBnCODKz+FJa29JKZt2Np6TQH1r4gzTW2VFQV2g/fZj45Q+tksYoZiNKj
+         RuGq3A4xjPXhkADrTm902BjwMc6B1bhxzSSzKOhSDHDTQtaW153mbKo4yGmUTer3IjCY
+         Tp+ZOtqkp/x59I3UzwTAZxCI8In/OwumTVvqb15XbNySzd8pJBWVRi1RDuJ5qEVjZs/4
+         bZcw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=precedence:feedback-id:list-unsubscribe:list-unsubscribe-post
+         :list-id:date:subject:to:reply-to:from:mime-version:message-id
+         :dkim-signature:dkim-signature;
+        bh=d5uNjZZZkODq4nv7/+e+cln3DXrhPdNlGUPvzcWH9nA=;
+        b=rx0v7HDymEugQ5XZeIojKpOrHeFbMNvMXceZi3ZcvYFjvlqmPIc+XNgXf6JHtf3yte
+         zNn3heHS8OjnW1i541jMTQGVhiLefBcm+d8Vs65pbwB9BBWx/2JsCG1sbKMg4ftfHGhM
+         zzpo17cTFwW2GSamJsW80Owdl56rcWITPW//seiQMlgsPfcD8BW/qaL/nWpAyiJAuKxf
+         m7x8iZlvqJHYrbe7yXDViPDc2Pox1gYYenjfcqy3RJ1mkypfDxIOZ0Z7Ew0kPBMckKBU
+         pILqC4TkmAQd6UGtEEfGHd1D29iUwV8B3QrkScrg6dUxif2Zk7ZrIYZGAMmWH3gXPVhH
+         2QMg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=temperror (no key for signature) header.i=@clionautes.fr header.s=mailjet header.b=ESfkPqIr;
+       dkim=pass header.i=@bnc3.mailjet.com header.s=mailjet header.b=TmAH6eKb;
+       spf=pass (google.com: domain of 9effd7a5.avcaaeg7zfcaacpskloaagxhit4aaycrr5yagqecaacwnwbhken-@bnc3.mailjet.com designates 185.250.237.47 as permitted sender) smtp.mailfrom=9effd7a5.AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-@bnc3.mailjet.com
+Return-Path: <9effd7a5.AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-@bnc3.mailjet.com>
+Received: from o47.p38.mailjet.com (o47.p38.mailjet.com. [185.250.237.47])
+        by mx.google.com with UTF8SMTPS id m14si29856817wrp.517.2021.11.13.15.00.15
+        for <theory51@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 13 Nov 2021 15:00:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of 9effd7a5.avcaaeg7zfcaacpskloaagxhit4aaycrr5yagqecaacwnwbhken-@bnc3.mailjet.com designates 185.250.237.47 as permitted sender) client-ip=185.250.237.47;
+Authentication-Results: mx.google.com;
+       dkim=temperror (no key for signature) header.i=@clionautes.fr header.s=mailjet header.b=ESfkPqIr;
+       dkim=pass header.i=@bnc3.mailjet.com header.s=mailjet header.b=TmAH6eKb;
+       spf=pass (google.com: domain of 9effd7a5.avcaaeg7zfcaacpskloaagxhit4aaycrr5yagqecaacwnwbhken-@bnc3.mailjet.com designates 185.250.237.47 as permitted sender) smtp.mailfrom=9effd7a5.AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-@bnc3.mailjet.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; q=dns/txt;
+  d=clionautes.fr; i=bruno.modica@clionautes.fr; s=mailjet;
+  h=message-id:mime-version:from:reply-to:to:subject:date:list-id:list-unsubscribe-post:
+  list-unsubscribe:feedback-id:precedence:x-campaignid:x-csa-complaints:
+  x-mj-mid:x-mj-smtpguid:x-report-abuse-to:content-type;
+  bh=cy0SVY4oR5qQnYaSFbD1UDqFZxhj/HRqE7EUHgJjn04=;
+  b=ESfkPqIrUuyZLL9Q5BhR25Gt4HW4/BIRs5TGPCxKCvNXq4Tn1pfYUzPTw
+ j/jqgIembv30XPDRwnn4nQmLvtujgiSj9URg0S20aQO6Tw89G5dpfOge707w
+ GdQH2vm3SHKfYsXNPeWLoYRY7xMOyrMGyvqSiOsrj+NSatIRlCAcJw=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; q=dns/txt;
+  d=bnc3.mailjet.com; s=mailjet;
+  h=message-id:mime-version:from:reply-to:to:subject:date:list-id:list-unsubscribe-post:
+  list-unsubscribe:feedback-id:precedence:x-campaignid:x-csa-complaints:
+  x-mj-mid:x-mj-smtpguid:x-report-abuse-to:content-type;
+  bh=cy0SVY4oR5qQnYaSFbD1UDqFZxhj/HRqE7EUHgJjn04=;
+  b=TmAH6eKbqsGbpu9fkbs6kIzWGn7f9KYaL1WTUyMbIhjWC83Bc52eSpn8n
+ RewJibwXXlQNBga2tDuhAu3jzA4Qq0K5k3GwtmpL6cXV34PaB3O6V94QaNoP
+ GXcif/NvrtyjwRojHJSfE2YULJlvHgJegxm3A+iEwcqj6aUNNXCz04=
+Return-Path:
+	<9effd7a5.AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-@bnc3.mailjet.com>
+Message-Id: <9effd7a5.AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-@mailjet.com>
+MIME-Version: 1.0
+From: Bruno Modica <bruno.modica@clionautes.fr>
+Reply-To: bruno.modica@clionautes.fr
+To: theory51@gmail.com
+Subject: =?UTF-8?Q?Relance_adh=C3=A9sion__14_novembre_?= =?UTF-8?Q?2021__?=
+Date: Sat, 13 Nov 2021 23:00:14 +0000 (UTC)
+List-Id: <bruno.modica.clionautes.fr.guul-01iy1.mj>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe:
+	<mailto:unsub-9effd7a5.guul.lutxmjh9ztsx@bnc3.mailjet.com>,
+	<https://guul.mjt.lu/unsub2?m=AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k&b=9effd7a5&e=897c3e23&x=EDZEhI57QaMftlwNvBjmEYNY2Ux6iUTgsY3z1ctBfxE>
+Feedback-Id: 42.471095.449369:MJ
+Precedence: bulk
+X-CampaignID: 7691079866
+X-CSA-Complaints: csa-complaints@eco.de
+X-MJ-Mid:
+	AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k
+X-MJ-SMTPGUID: 3c7be4f6-002d-4b62-87f9-1fc5770ebf69
+X-REPORT-ABUSE-TO: Message sent by Mailjet please report to
+	abuse@mailjet.com with a copy of the message
+Content-Type: multipart/alternative; boundary="=-uMMUY5v0kSY92SFuy1jz"
+
+--=-uMMUY5v0kSY92SFuy1jz
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+L'infolettre de la communaut=C3=A9 des historiens-g=C3=A9ographes
+
+[[PERMALINK_FULL_LINK]]
+
+
+
+
+L'ACTUALIT=C3=89 DES CLIONAUTES
+ACTU
+---------------------------------------------------------------------------=
+-----
+R=C3=89F=C3=89RENCES EN HISTOIRE-G=C3=89OGRAPHIE
+[https://www.herodote.net/]
+
+
+
+---------------------------------------------------------------------------=
+-----
+CLIO COLL=C3=88GE
+---------------------------------------------------------------------------=
+-----
+CLIO LYC=C3=89E
+---------------------------------------------------------------------------=
+-----
+MP3
+---------------------------------------------------------------------------=
+-----
+[https://www.facebook.com/groups/257974041262740/]
+
+---------------------------------------------------------------------------=
+-----
+CLIO CARTO
+---------------------------------------------------------------------------=
+-----
+CLIO PR=C3=89PAS
+---------------------------------------------------------------------------=
+-----
+LA CLIOTH=C3=88QUE
+---------------------------------------------------------------------------=
+-----
+[https://twitter.com/clionautes1?lang=3Dfr]
+
+
+
+[https://www.clionautes.org/spip.php?article493]
+
+
+
+[[DELIVERY_INFO]]=
+
+--=-uMMUY5v0kSY92SFuy1jz
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><head><title>Relance adh=C3=A9sion 14 novembre 2021  </title><!--[if !m=
+so]><!--><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><!--<![=
+endif]--><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3D=
+UTF-8"><meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scal=
+e=3D1"><style type=3D"text/css">#outlook a { padding:0; }
+          body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-=
+size-adjust:100%; }
+          table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-tab=
+le-rspace:0pt; }
+          img { border:0;height:auto;line-height:100%; outline:none;text-de=
+coration:none;-ms-interpolation-mode:bicubic; }
+          p { display:block;margin:13px 0; }</style><!--[if mso]>
+        <noscript>
+        <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml>
+        </noscript>
+        <![endif]--><!--[if lte mso 11]>
+        <style type=3D"text/css">
+          .mj-outlook-group-fix { width:100% !important; }
+        </style>
+        <![endif]--><style type=3D"text/css">@media only screen and (min-wi=
+dth:480px) {
+        .mj-column-per-67 { width:67% !important; max-width: 67%; }
+.mj-column-per-33 { width:33% !important; max-width: 33%; }
+.mj-column-per-100 { width:100% !important; max-width: 100%; }
+      }</style><style media=3D"screen and (min-width:480px)">.moz-text-html=
+ .mj-column-per-67 { width:67% !important; max-width: 67%; }
+.moz-text-html .mj-column-per-33 { width:33% !important; max-width: 33%; }
+.moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%;=
+ }</style><style type=3D"text/css">[owa] .mj-column-per-67 { width:67% !imp=
+ortant; max-width: 67%; }
+[owa] .mj-column-per-33 { width:33% !important; max-width: 33%; }
+[owa] .mj-column-per-100 { width:100% !important; max-width: 100%; }</style=
+><style type=3D"text/css">@media only screen and (max-width:480px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }</style></head><body style=3D"word-spacing:normal;background-color:#db=
+e5f0;"><div style=3D"background-color:#dbe5f0;"><!--[if mso | IE]><table al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" =
+role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:0 0 0 0;padding-bottom:20px;padding-top:20px;text-align:center;"><!--[if =
+mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:middle;width:402px;=
+" ><![endif]--><div class=3D"mj-column-per-67 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:middle;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vert=
+ical-align:middle;padding:0 0 0 0;"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=
+=3D"left" vertical-align=3D"middle" style=3D"font-size:0px;padding:0px 0 0p=
+x 0;padding-top:0px;padding-right:25px;padding-bottom:0px;padding-left:25px=
+;word-break:break-word;"><div style=3D"font-family:Arial, sans-serif;font-s=
+ize:13px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;=
+"><p class=3D"text-build-content" data-testid=3D"_5uVNe51LYa7" style=3D"mar=
+gin: 10px 0; margin-top: 10px; margin-bottom: 10px;"><span style=3D"color:#=
+000000;font-size:16px;line-height:22px;">D=C3=A9termin=C3=A9s, offensifs, p=
+orteurs de projets !&nbsp;</span></p></div></td></tr></tbody></table></td><=
+/tr></tbody></table></div><!--[if mso | IE]></td><td class=3D"" style=3D"ve=
+rtical-align:middle;width:198px;" ><![endif]--><div class=3D"mj-column-per-=
+33 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:l=
+tr;display:inline-block;vertical-align:middle;width:100%;"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%=
+"><tbody><tr><td style=3D"vertical-align:middle;padding:0 0 0 0;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%"><tbody><tr><td align=3D"left" vertical-align=3D"middle" style=3D"=
+font-size:0px;padding:0px 0 0px 0;padding-top:0px;padding-right:25px;paddin=
+g-bottom:0px;padding-left:25px;word-break:break-word;"><div style=3D"font-f=
+amily:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1;=
+text-align:left;color:#000000;"><p style=3D"text-align: right; margin: 10px=
+ 0; margin-top: 10px; margin-bottom: 10px;"><a href=3D"http://guul.mjt.lu/n=
+l2/guul/m670r.html?m=3DAVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-=
+PHvk9gAtS2KH-R_Fdw6_aQAG21k&b=3D9effd7a5&e=3D897c3e23&x=3DEDZEhI57QaMftlwNv=
+BjmEYNY2Ux6iUTgsY3z1ctBfxE" target=3D"_blank" style=3D"; text-decoration: n=
+one;"><span style=3D"font-size:16px;letter-spacing:normal;text-align:right;=
+color:#0000EE;font-family:Arial;line-height:22px;"><u>Voir la version en li=
+gne</u></span></a></p></div></td></tr></tbody></table></td></tr></tbody></t=
+able></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbod=
+y></table></div><!--[if mso | IE]></td></tr></table><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presen=
+tation" style=3D"width:600px;" width=3D"600" bgcolor=3D"#FFFFFF" ><tr><td s=
+tyle=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![end=
+if]--><div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px =
+auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#FFFFFF;back=
+ground-color:#FFFFFF;width:100%;"><tbody><tr><td style=3D"direction:ltr;fon=
+t-size:0px;padding:0px 0px 0px 0px;padding-bottom:0px;padding-left:0px;padd=
+ing-right:0px;padding-top:0px;text-align:center;"><!--[if mso | IE]><table =
+role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr>=
+<td class=3D"" style=3D"vertical-align:middle;width:600px;" ><![endif]--><d=
+iv class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;=
+text-align:left;direction:ltr;display:inline-block;vertical-align:middle;wi=
+dth:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:middle;=
+padding:0 0 0 0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"center" style=
+=3D"font-size:0px;padding:10px 25px;padding-top:0px;padding-right:0px;paddi=
+ng-bottom:0px;padding-left:0px;word-break:break-word;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-c=
+ollapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px;"=
+><img alt=3D"" height=3D"auto" src=3D"http://guul.mjt.lu/tplimg/guul/b/xri4=
+/0knnx.jpeg" style=3D"border:none;border-radius:px;display:block;outline:no=
+ne;text-decoration:none;height:auto;width:100%;font-size:13px;" width=3D"60=
+0"></td></tr></tbody></table></td></tr><tr><td align=3D"left" style=3D"back=
+ground:#fd0808;font-size:0px;padding:0px 25px 0px 25px;padding-top:0px;padd=
+ing-right:25px;padding-bottom:0px;padding-left:25px;word-break:break-word;"=
+><div style=3D"font-family:Arial, sans-serif;font-size:13px;letter-spacing:=
+normal;line-height:1;text-align:left;color:#000000;"><p class=3D"text-build=
+-content" style=3D"text-align: center; margin: 10px 0; margin-top: 10px; ma=
+rgin-bottom: 10px;" data-testid=3D"vG1C9p3pJ"><span style=3D"color:#0000EE;=
+font-family:Arial;font-size:23px;line-height:24px;"><b><u>Trouveriez-vous c=
+ela ailleurs ?&nbsp;</u></b></span></p></div></td></tr></tbody></table></td=
+></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--=
+></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td styl=
+e=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]=
+--><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddi=
+ng:5px 0px 5px 0px;padding-bottom:5px;padding-left:0px;padding-right:0px;pa=
+dding-top:5px;text-align:center;"><!--[if mso | IE]><table role=3D"presenta=
+tion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" s=
+tyle=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-colu=
+mn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;dir=
+ection:ltr;display:inline-block;vertical-align:top;width:100%;"><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"vertical-align:top;" width=3D"100%"><tbody><tr><td align=3D"left" style=3D=
+"font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;word-br=
+eak:break-word;"><div style=3D"font-family:Arial, sans-serif;font-size:32px=
+;letter-spacing:normal;line-height:1;text-align:left;color:#000000;"><p cla=
+ss=3D"text-build-content" style=3D"text-align: center; margin: 10px 0; marg=
+in-top: 10px;" data-testid=3D"4W6vO0IKL"><span style=3D"font-size:32px;"><b=
+>Votre soutien - notre force !</b></span></p><p class=3D"text-build-content=
+" style=3D"text-align: center; margin: 10px 0;" data-testid=3D"4W6vO0IKL"><=
+span style=3D"font-size:32px;"><b>L'automne a des effets sur le moral ?</b>=
+</span></p><p class=3D"text-build-content" style=3D"text-align: center; mar=
+gin: 10px 0; margin-bottom: 10px;" data-testid=3D"4W6vO0IKL"><span style=3D=
+"font-size:32px;"><b>Pas chez les Clionautes !</b></span></p></div></td></t=
+r></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></t=
+d></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" r=
+ole=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D=
+"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><=
+div style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:5=
+px 0px 5px 0px;padding-bottom:5px;padding-left:0px;padding-right:0px;paddin=
+g-top:5px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-p=
+er-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;directi=
+on:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td align=3D"center" style=3D=
+"font-size:0px;padding:10px 25px;word-break:break-word;"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:550px=
+;"><img alt=3D"" height=3D"auto" src=3D"https://guul.mjt.lu/img/guul/b/m670=
+r/vkqkq.jpeg" style=3D"border:none;display:block;outline:none;text-decorati=
+on:none;height:auto;width:100%;font-size:13px;" width=3D"550"></td></tr></t=
+body></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></=
+table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></=
+tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"6=
+00" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;fo=
+nt-size:0px;padding:0px 0px 0px 0px;padding-bottom:0px;padding-left:0px;pad=
+ding-right:0px;padding-top:0px;text-align:center;"><!--[if mso | IE]><table=
+ role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr=
+><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div=
+ class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;te=
+xt-align:left;direction:ltr;display:inline-block;vertical-align:top;width:1=
+00%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0px;padding-=
+bottom:0px;word-break:break-word;"><div style=3D"font-family:Arial, sans-se=
+rif;font-size:17px;letter-spacing:normal;line-height:1;text-align:left;colo=
+r:#000000;"><p class=3D"text-build-content" style=3D"text-align: center; ma=
+rgin: 10px 0; margin-top: 10px; margin-bottom: 10px;" data-testid=3D"omuROV=
+oTv"><a class=3D"link-build-content" style=3D"color:inherit;; text-decorati=
+on: none;" target=3D"_blank" href=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcAAcp=
+skLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/1/EJUgnqs5=
+AoAn5vwW828utA/aHR0cHM6Ly93d3cuY2xpb25hdXRlcy5vcmcvYWRoZXJlci1hdXgtY2xpb25h=
+dXRlcw"><span style=3D"color:#ec0f0f;font-family:Arial;font-size:23px;"><b>=
+<u>RENOUVELEZ VOTRE ADH=C3=89SION !&nbsp;</u></b></span></a></p></div></td>=
+</tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-->=
+</td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:5px 0px 5px 0px;padding-bottom:5px;padding-left:0px;padding-right:0px;pad=
+ding-top:5px;text-align:center;"><!--[if mso | IE]><table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" st=
+yle=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-colum=
+n-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;dire=
+ction:ltr;display:inline-block;vertical-align:top;width:100%;"><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+vertical-align:top;" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"=
+font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;word-bre=
+ak:break-word;"><div style=3D"font-family:Arial, sans-serif;font-size:17px;=
+letter-spacing:normal;line-height:1;text-align:left;color:#000000;"><p clas=
+s=3D"text-build-content" style=3D"text-align: justify; margin: 10px 0; marg=
+in-top: 10px;" data-testid=3D"o-21EZ2nD"><b>En ces temps de reprise apr=C3=
+=A8s des vacances d'automne, et dans un contexte plut=C3=B4t morose, marqu=
+=C3=A9 par la vacuit=C3=A9 du d=C3=A9bat politique g=C3=A9n=C3=A9ral il est=
+ temps de r=C3=A9affirmer quelques valeurs simples.&nbsp;</b></p><p class=
+=3D"text-build-content" style=3D"text-align: justify; margin: 10px 0;" data=
+-testid=3D"o-21EZ2nD"><span style=3D"font-size:14px;">Vous =C3=AAtes, nous =
+sommes des acteurs de terrain. Et le combat pour la la=C3=AFcit=C3=A9, pour=
+ la libert=C3=A9 d'expression, nous le menons ensemble au quotidien. Loin d=
+es plateaux t=C3=A9l=C3=A9 sur lesquels d'aucuns peuvent se complaire.&nbsp=
+;</span></p><p class=3D"text-build-content" style=3D"text-align: center; ma=
+rgin: 10px 0;" data-testid=3D"o-21EZ2nD"><a class=3D"link-build-content" st=
+yle=3D"color:inherit;; text-decoration: none;" target=3D"_blank" href=3D"ht=
+tp://guul.mjt.lu/lnk/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PH=
+vk9gAtS2KH-R_Fdw6_aQAG21k/2/MtNMjQPkS_IHuQ9eyqdDkA/aHR0cHM6Ly93d3cuY2xpb25h=
+dXRlcy5vcmcvYWRoZXJlci1hdXgtY2xpb25hdXRlcw"><span style=3D"color:#f50606;fo=
+nt-family:Arial;font-size:17px;"><b><u>Votre participation est essentielle<=
+/u></b></span></a></p><p class=3D"text-build-content" style=3D"text-align: =
+justify; margin: 10px 0;" data-testid=3D"o-21EZ2nD"><a class=3D"link-build-=
+content" style=3D"color:inherit;; text-decoration: none;" target=3D"_blank"=
+ href=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAc=
+wNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/3/42eZNEk1rzX_knVb5Suqjg/aHR0cHM6Ly93d=
+3cuY2xpb25hdXRlcy5vcmcvY2xpby1jb25mZXJlbmNlcy9mZXN0aXZhbC1pbnRlcm5hdGlvbmFs=
+LWRlLWdlb2dyYXBoaWUtZGUtc2FpbnQtZGll"><span style=3D"color:inherit;font-fam=
+ily:Arial;"><b><u>Festival de g=C3=A9ographie de Saint-Di=C3=A9</u></b></sp=
+an></a><b> - &nbsp;</b><a class=3D"link-build-content" style=3D"color:inher=
+it;; text-decoration: none;" target=3D"_blank" href=3D"http://guul.mjt.lu/l=
+nk/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_=
+aQAG21k/4/566WQQJsukFXWSYuHBZ7nw/aHR0cHM6Ly9yZHYtaGlzdG9pcmUuY29tLw"><span =
+style=3D"color:inherit;font-family:Arial;"><b><u>Rendez-vous de l'Histoire =
+de Blois</u></b></span></a><b>&nbsp;</b></p><p class=3D"text-build-content"=
+ style=3D"text-align: justify; margin: 10px 0;" data-testid=3D"o-21EZ2nD">A=
+ccompagnement de nos candidats aux concours. <b>Dispositif </b><a class=3D"=
+link-build-content" style=3D"color:inherit;; text-decoration: none;" target=
+=3D"_blank" href=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCr=
+R5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/5/7Y2BvliBfHEmwkqRxoxaTA/aH=
+R0cHM6Ly9jbGlvLXByZXBhcy5jbGlvbmF1dGVzLm9yZy9sZXMtY29uZmVyZW5jZXMtZGVzLWNsa=
+W9uYXV0ZXMtY2FwZXMtZXQtYWdyZWdhdGlvbi1pbnRlcm5lLmh0bWw"><span style=3D"colo=
+r:inherit;font-family:Arial;"><b><u>visioconf=C3=A9rences</u></b></span></a=
+><b>.</b></p><p class=3D"text-build-content" style=3D"text-align: justify; =
+margin: 10px 0;" data-testid=3D"o-21EZ2nD"><b>Nous sommes attentifs aux con=
+ditions d'exercice de notre m=C3=A9tier, et nous en soulignons les limites.=
+&nbsp;</b></p><p class=3D"text-build-content" style=3D"text-align: justify;=
+ margin: 10px 0;" data-testid=3D"o-21EZ2nD"><span style=3D"font-size:14px;"=
+><b>Vous connaissez tout comme nous la r=C3=A9alit=C3=A9 du terrain, contra=
+irement =C3=A0 tous ceux qui parlent de l'=C3=A9cole sur les plateaux de t=
+=C3=A9l=C3=A9vision.</b></span></p><p class=3D"text-build-content" style=3D=
+"text-align: justify; margin: 10px 0;" data-testid=3D"o-21EZ2nD"><span styl=
+e=3D"font-size:14px;">Historiens et g=C3=A9ographes nous mesurons tous les =
+jours les enjeux d'une situation sanitaire complexe, =C3=A0 l'=C3=A9chelle =
+mondiale, comme au niveau de nos territoires. Nous mesurons =C3=A9galement =
+certains d=C3=A9ficits de gouvernance au niveau du syst=C3=A8me =C3=A9ducat=
+if.&nbsp;</span></p><p class=3D"text-build-content" style=3D"text-align: ce=
+nter; margin: 10px 0;" data-testid=3D"o-21EZ2nD"><span style=3D"color:#f108=
+08;font-size:16px;"><b>La r=C3=A9signation n'est pas dans notre nature&nbsp=
+;</b></span></p><p class=3D"text-build-content" style=3D"line-height: 23px;=
+ text-align: justify; margin: 10px 0;" data-testid=3D"o-21EZ2nD"><span styl=
+e=3D"color:#2d75ea;font-size:14px;"><b>Et c'est en cela que </b></span><a c=
+lass=3D"link-build-content" style=3D"color:inherit;; text-decoration: none;=
+" target=3D"_blank" href=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcAAcpskLoAAGXh=
+IT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/6/zEpKbpwF58Ef6xXJt=
+TDrxQ/aHR0cHM6Ly93d3cuY2xpb25hdXRlcy5vcmcv"><span style=3D"color:#2d75ea;fo=
+nt-family:Arial;font-size:14px;"><b><u>les Clionautes</u></b></span></a><sp=
+an style=3D"color:#2d75ea;font-size:14px;"><b>, comme association professio=
+nnelle d'historiens et de g=C3=A9ographes n'a pas d'=C3=A9quivalent.&nbsp;<=
+/b></span></p><p class=3D"text-build-content" style=3D"text-align: justify;=
+ margin: 10px 0;" data-testid=3D"o-21EZ2nD"><span style=3D"font-size:14px;"=
+>Vous avez commenc=C3=A9 cette aventure avec nous, </span><a class=3D"link-=
+build-content" style=3D"color:inherit;; text-decoration: none;" target=3D"_=
+blank" href=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAG=
+qecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/7/RAeKbOW9saHfqZMlLGjxhQ/aHR0cHM=
+6Ly93d3cuY2xpb25hdXRlcy5vcmcvYWRoZXJlci1hdXgtY2xpb25hdXRlcw"><span style=3D=
+"color:inherit;font-family:Arial;font-size:14px;"><u>vous avez toutes les r=
+aisons de la poursuivre.&nbsp;</u></span></a></p><p class=3D"text-build-con=
+tent" style=3D"text-align: justify; margin: 10px 0;" data-testid=3D"o-21EZ2=
+nD"><span style=3D"color:#2d75ea;font-family:Arial;font-size:22px;"><b>Forc=
+e de proposition</b></span><span style=3D"color:#1f52de;font-family:Arial;f=
+ont-size:22px;"><b>&nbsp;</b></span></p><p class=3D"text-build-content" sty=
+le=3D"text-align: justify; margin: 10px 0;" data-testid=3D"o-21EZ2nD"><span=
+ style=3D"font-family:Arial;font-size:14px;"><b>Au moment o=C3=B9 les quest=
+ions touchant =C3=A0 la la=C3=AFcit=C3=A9 et aux valeurs de la r=C3=A9publi=
+que sont agit=C3=A9es sur le mode de la communication, nous avons avanc=C3=
+=A9 de v=C3=A9ritables propositions. </b></span><a class=3D"link-build-cont=
+ent" style=3D"color:inherit;; text-decoration: none;" target=3D"_blank" hre=
+f=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwB=
+hkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/8/tnaVQpW4qRNeN7gvoIbpfw/aHR0cHM6Ly93d3cuY=
+2xpb25hdXRlcy5vcmcvaG9tbWFnZS1zYW11ZWwtcGF0eS1lY29sZS1yZXB1YmxpcXVlLWVuLWRl=
+dWlsLW1haXMtcmVzdGUtZGVib3V0Lmh0bWw"><span style=3D"color:#f80808;font-fami=
+ly:Arial;font-size:14px;"><b><u>Elle sont connues depuis le 16 octobre</u><=
+/b></span></a><span style=3D"color:#f80808;font-family:Arial;font-size:14px=
+;"><b>,</b></span><span style=3D"font-family:Arial;font-size:14px;"><b> </b=
+></span><a class=3D"link-build-content" style=3D"color:inherit;; text-decor=
+ation: none;" target=3D"_blank" href=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcA=
+AcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/9/w0ACo=
+iflE2PBm3CWU6kGkA/aHR0cHM6Ly93d3cuY2xpb25hdXRlcy5vcmcvc2Fucy1jb25jZXNzaW9uc=
+y1uaS1mYWlibGVzc2VzLmh0bWw"><span style=3D"color:inherit;font-family:Arial;=
+font-size:14px;"><b><u>date d'un bien triste anniversaire.&nbsp;</u></b></s=
+pan></a></p><p class=3D"text-build-content" style=3D"text-align: justify; m=
+argin: 10px 0;" data-testid=3D"o-21EZ2nD"><span style=3D"color:#2d75ea;font=
+-family:Arial;font-size:22px;"><b>Force d'action</b></span></p><p class=3D"=
+text-build-content" style=3D"text-align: justify; margin: 10px 0;" data-tes=
+tid=3D"o-21EZ2nD"><span style=3D"font-family:Arial;font-size:14px;"><b>Par =
+nos moyens autonomes et rigoureusement ind=C3=A9pendants</b> nous pouvons r=
+=C3=A9pondre aux besoins que nos adh=C3=A9rents peuvent exprimer. En dehors=
+ des p=C3=A9riodes de crise sanitaire, et depuis plus de 10 ans, les Cliona=
+utes ne se contentent pas de s'agiter autour des th=C3=A8mes de travail coo=
+p=C3=A9ratif et de mutualisation, ils les mettent r=C3=A9ellement en =C5=93=
+uvre.</span></p><p class=3D"text-build-content" style=3D"text-align: justif=
+y; margin: 10px 0;" data-testid=3D"o-21EZ2nD"><span style=3D"color:#2d75ea;=
+font-family:Arial;font-size:14px;"><b>Mais ce d=C3=A9veloppement d=C3=A9pen=
+d de chacune et de chacun d'entre vous.</b></span><span style=3D"font-famil=
+y:Arial;font-size:14px;"><b>&nbsp;</b></span></p><p class=3D"text-build-con=
+tent" style=3D"text-align: justify; margin: 10px 0; margin-bottom: 10px;" d=
+ata-testid=3D"o-21EZ2nD"><a class=3D"link-build-content" style=3D"color:inh=
+erit;; text-decoration: none;" target=3D"_blank" href=3D"http://guul.mjt.lu=
+/lnk/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw=
+6_aQAG21k/10/TDgOiRaDh0NUO9yOy686Rg/aHR0cHM6Ly93d3cuY2xpb25hdXRlcy5vcmcvYWR=
+oZXJlci1hdXgtY2xpb25hdXRlcw"><span style=3D"color:inherit;font-family:Arial=
+;font-size:14px;"><b><u>De votre adh=C3=A9sion tout d'abord</u></b></span><=
+/a><span style=3D"font-family:Arial;font-size:14px;"><b>, de votre particip=
+ation ensuite. Les Clionautes sont une p=C3=A9pini=C3=A8re de talents, mais=
+ ils doivent s'exprimer avec encore plus de force et de d=C3=A9termination =
+!</b></span></p></div></td></tr></tbody></table></div><!--[if mso | IE]></t=
+d></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" w=
+idth=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-heigh=
+t-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;=
+"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"directi=
+on:ltr;font-size:0px;padding:5px 0px 5px 0px;padding-bottom:5px;padding-lef=
+t:0px;padding-right:0px;padding-top:5px;text-align:center;"><!--[if mso | I=
+E]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![end=
+if]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:to=
+p;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"center" style=3D"b=
+ackground:#07386d;font-size:0px;padding:10px 25px;word-break:break-word;"><=
+table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td sty=
+le=3D"width:106px;"><a href=3D"http://guul.mjt.lu/lnk/AVcAAEG7zFcAAcpskLoAA=
+GXhIT4AAYCrR5YAGqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/11/g_08LZRsd3dIL=
+MsC8wMdAg/aHR0cHM6Ly93d3cuY2xpb25hdXRlcy5vcmcvYWRoZXJlci1hdXgtY2xpb25hdXRlc=
+w" target=3D"_blank"><img alt=3D"" height=3D"auto" src=3D"http://guul.mjt.l=
+u/tplimg/guul/b/xri4/0k8y5.jpeg" style=3D"border:none;border-radius:px;disp=
+lay:block;outline:none;text-decoration:none;height:auto;width:100%;font-siz=
+e:13px;" width=3D"106"></a></td></tr></tbody></table></td></tr><tr><td alig=
+n=3D"center" style=3D"font-size:0px;padding:10px 25px;padding-top:0px;paddi=
+ng-bottom:0px;word-break:break-word;"><div style=3D"font-family:Arial, sans=
+-serif;font-size:11px;letter-spacing:normal;line-height:22px;text-align:cen=
+ter;color:#000000;"><p class=3D"text-build-content" style=3D"margin: 10px 0=
+; margin-top: 10px; margin-bottom: 10px;">Cet e-mail a =C3=A9t=C3=A9 envoy=
+=C3=A9 =C3=A0 theory51@gmail.com, <a target=3D"_blank" href=3D"http://guul.=
+mjt.lu/unsub2?hl=3Dfr&amp;m=3DAVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YAGqecAAcwN=
+wBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k&amp;b=3D9effd7a5&amp;e=3D897c3e23&amp;x=
+=3DEDZEhI57QaMftlwNvBjmEYNY2Ux6iUTgsY3z1ctBfxE" style=3D"; text-decoration:=
+ none;">cliquez ici pour vous d=C3=A9sabonner</a> .</p></div></td></tr></tb=
+ody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></t=
+able><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></t=
+r></table><![endif]--></div>
+<br/><img src=3D"http://guul.mjt.lu/oo/AVcAAEG7zFcAAcpskLoAAGXhIT4AAYCrR5YA=
+GqecAAcwNwBhkEN-PHvk9gAtS2KH-R_Fdw6_aQAG21k/07ae21df/e.gif" height=3D"1" wi=
+dth=3D"1" alt=3D"" border=3D"0" style=3D"height:1px;width:1px;border:0;"/>
+</body></html>=
+
+--=-uMMUY5v0kSY92SFuy1jz--
+
